@@ -1,0 +1,95 @@
+:root { --orange: #ff6a00; --orange-dark: #e55b00; }
+
+body { background:#f8f9fa; font-family:'Segoe UI',sans-serif; display:flex; flex-direction:column; min-height:100vh; }
+
+.bg-orange  { background:var(--orange) !important; }
+.text-orange { color:var(--orange) !important; }
+.text-orange-light { color:#ffb347; }
+.border-orange { border-color:var(--orange) !important; }
+.btn-orange { background:var(--orange); color:white; border:none; }
+.btn-orange:hover { background:var(--orange-dark); color:white; }
+.btn-white  { background:white; color:var(--orange); border:none; font-weight:600; }
+.btn-white:hover { background:#f0f0f0; color:var(--orange-dark); }
+
+/* NAVBAR */
+.navbar { position:sticky; top:0; z-index:100; }
+
+/* MENU LATÉRAL */
+.side-menu {
+    position:fixed; top:0; left:-280px; width:260px; height:100%;
+    background:white; padding:20px; transition:0.3s ease;
+    z-index:1000; overflow-y:auto; box-shadow:4px 0 20px rgba(0,0,0,.1);
+}
+.side-menu a { display:block; margin:5px 0; color:#333; text-decoration:none; padding:8px 10px; border-radius:8px; transition:0.2s; font-size:14px; }
+.side-menu a:hover { background:#fff3e0; color:var(--orange); }
+#overlay { position:fixed; inset:0; background:rgba(0,0,0,.5); display:none; z-index:999; }
+
+/* ===== HERO ===== */
+.hero-section {
+    position:relative;
+    /* Belle photo de boutique quincaillerie bien rangée */
+    background:
+        linear-gradient(135deg, rgba(10,10,10,0.78) 0%, rgba(255,106,0,0.40) 100%),
+        url('https://storage.googleapis.com/dala-prod-public-storage/generated-images/ca3ae39b-43dc-43d9-b481-489cae47b99b/hero-background-395ccc5c-1774645246598.webp') center/cover no-repeat;
+    min-height:520px; border-radius:16px; overflow:hidden;
+    display:flex; align-items:center; justify-content:center;
+}
+.hero-content { position:relative; z-index:2; padding:50px 20px; max-width:720px; margin:auto; }
+.hero-badge {
+    display:inline-block;
+    background:rgba(255,106,0,.22); border:1px solid rgba(255,106,0,.55);
+    color:#ffb347; padding:6px 18px; border-radius:30px;
+    font-size:13px; font-weight:600; letter-spacing:1px; text-transform:uppercase;
+}
+.hero-title { font-size:3rem; font-weight:800; line-height:1.15; text-shadow:0 2px 12px rgba(0,0,0,.4); }
+.hero-subtitle { font-size:1.1rem; opacity:.88; max-width:520px; margin:12px auto 0; }
+.hero-stats { gap:40px; }
+.hero-stat-number { font-size:2rem; font-weight:800; color:#ffb347; }
+.hero-stat-label  { font-size:11px; opacity:.75; text-transform:uppercase; letter-spacing:1px; }
+.hero-stat-divider { width:1px; background:rgba(255,255,255,.2); align-self:stretch; }
+@media(max-width:768px){
+    .hero-title { font-size:1.8rem; }
+    .hero-section { min-height:360px; border-radius:10px; }
+}
+
+/* ===== AVANTAGES ===== */
+.avantage-card { background:white; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,.06); transition:0.2s; }
+.avantage-card:hover { transform:translateY(-3px); box-shadow:0 6px 20px rgba(0,0,0,.10); }
+
+/* ===== CATÉGORIES ===== */
+.cat-card { background:white; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,.06); transition:0.25s; }
+.cat-card:hover { transform:translateY(-4px); box-shadow:0 8px 24px rgba(255,106,0,.15); border:1px solid rgba(255,106,0,.2); }
+
+/* ===== PRODUITS ===== */
+.product-card { border-radius:14px !important; border:1px solid #f0f0f0 !important; overflow:hidden; transition:0.3s; }
+.product-card:hover { transform:translateY(-5px); box-shadow:0 10px 30px rgba(0,0,0,.12) !important; }
+.product-overlay { position:absolute; inset:0; background:rgba(0,0,0,.3); display:flex; align-items:center; justify-content:center; opacity:0; transition:0.3s; }
+.product-card:hover .product-overlay { opacity:1; }
+.product-card:hover img { transform:scale(1.05); }
+
+.badge-cat { background:#fff3e0; color:var(--orange); font-size:11px; padding:2px 8px; border-radius:20px; font-weight:600; display:inline-block; }
+
+/* ===== BANNIÈRES ===== */
+.promo-construction {
+    background:
+        linear-gradient(135deg, rgba(0,0,0,.72) 0%, rgba(255,106,0,.55) 100%),
+        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80&fit=crop') center/cover no-repeat;
+    min-height:200px;
+}
+.promo-livraison { background:linear-gradient(135deg,#ff6a00,#ee0979); min-height:200px; }
+.opacity-85 { opacity:.85; }
+
+/* ===== FOOTER ===== */
+.footer-link { color:#adb5bd; text-decoration:none; transition:0.2s; font-size:14px; }
+.footer-link:hover { color:var(--orange); padding-left:4px; }
+
+/* ===== ADMIN ===== */
+.admin-sidebar { min-height:100vh; background:#1e1e2e; width:230px; position:fixed; top:0; left:0; padding:20px 0; z-index:200; }
+.admin-sidebar a { display:block; color:#adb5bd; text-decoration:none; padding:10px 20px; transition:0.2s; font-size:14px; }
+.admin-sidebar a:hover, .admin-sidebar a.active { background:rgba(255,106,0,.15); color:var(--orange); border-left:3px solid var(--orange); }
+.admin-content { margin-left:230px; padding:24px; }
+.stat-card { border-radius:14px; padding:22px; color:white; }
+.card { border-radius:12px; border:none; }
+.page-link { color:var(--orange); }
+.page-item.active .page-link { background:var(--orange); border-color:var(--orange); }
+@media(max-width:768px){ .admin-sidebar{display:none;} .admin-content{margin-left:0;} }
